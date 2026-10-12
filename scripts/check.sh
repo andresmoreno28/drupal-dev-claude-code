@@ -9,7 +9,7 @@
 # 4. `claude plugin validate --strict` passes, when the Claude Code CLI is installed
 #    (a local check; set CHECK_SKIP_CLAUDE=1 to skip it).
 #
-# Needs one of jq, python3, php or node for JSON parsing.
+# Needs one of jq, python3, php or node for JSON parsing (CHECK_JSON_TOOL picks one).
 
 cd "$(dirname "$0")/.." || exit 1
 
@@ -19,7 +19,8 @@ pass() { printf 'ok   %s\n' "$1"; }
 
 # --- JSON ----------------------------------------------------------------------
 
-if command -v jq >/dev/null 2>&1; then json_tool=jq
+if [ -n "${CHECK_JSON_TOOL:-}" ]; then json_tool=$CHECK_JSON_TOOL
+elif command -v jq >/dev/null 2>&1; then json_tool=jq
 elif command -v python3 >/dev/null 2>&1; then json_tool=python3
 elif command -v php >/dev/null 2>&1; then json_tool=php
 elif command -v node >/dev/null 2>&1; then json_tool=node
@@ -178,9 +179,10 @@ fi
 
 # --- Scripts and line endings ------------------------------------------------------
 
-cr=$(printf '\r')
+# tr + cmp rather than grep: grep on Windows strips CR at the end of lines.
 crlf_files=$(git ls-files -co --exclude-standard 2>/dev/null | while IFS= read -r f; do
-  [ -f "$f" ] && grep -l "$cr" "$f" 2>/dev/null
+  [ -f "$f" ] || continue
+  tr -d '\r' <"$f" | cmp -s - "$f" || printf '%s ' "$f"
 done)
 if [ -z "$crlf_files" ]; then pass 'no CRLF line endings'; else fail "CRLF line endings in: $crlf_files"; fi
 
