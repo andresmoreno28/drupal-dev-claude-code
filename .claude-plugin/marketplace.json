@@ -1,0 +1,21 @@
+{
+  "name": "drupal-dev",
+  "owner": {
+    "name": "Andrés Moreno Rubio",
+    "url": "https://andresmoreno.dev"
+  },
+  "description": "Drupal development plugin for Claude Code by Andrés Moreno Rubio.",
+  "plugins": [
+    {
+      "name": "drupal-dev",
+      "source": "./",
+      "description": "Skills, a review subagent and fast lint hooks for Drupal 10, 11 and 12 development.",
+      "category": "development",
+      "tags": [
+        "drupal",
+        "php",
+        "twig"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "name": "drupal-dev",
+  "displayName": "Drupal Dev",
+  "version": "1.0.0",
+  "description": "Skills, a review subagent and fast lint hooks for Drupal 10, 11 and 12 development: modules, theming, configuration, security, testing, upgrades, performance, migrations and JSON:API.",
+  "author": {
+    "name": "Andrés Moreno Rubio",
+    "url": "https://andresmoreno.dev"
+  },
+  "homepage": "https://github.com/andresmoreno28/drupal-dev-claude-code",
+  "repository": "https://github.com/andresmoreno28/drupal-dev-claude-code",
+  "license": "MIT",
+  "keywords": [
+    "drupal",
+    "drupal-11",
+    "drupal-12",
+    "php",
+    "twig",
+    "phpcs",
+    "security",
+    "testing",
+    "code-review"
+  ]
+}

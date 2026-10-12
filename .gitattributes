@@ -1,0 +1,4 @@
+# Keep LF everywhere so the POSIX hook scripts run on macOS, Linux, WSL and
+# Git Bash regardless of the contributor's core.autocrlf setting.
+* text=auto eol=lf
+*.png binary
