@@ -9,7 +9,7 @@
     {
       "name": "drupal-dev",
       "source": "./",
-      "description": "Skills, a review subagent and fast lint hooks for Drupal 10, 11 and 12 development.",
+      "description": "Skills, a review subagent and a fast lint hook for Drupal 10, 11 and 12 development.",
       "category": "development",
       "tags": [
         "drupal",
