@@ -199,11 +199,11 @@ fi
 
 [ "$total" -gt 0 ] || exit 0
 
-if [ "$total" -eq 1 ]; then noun=problem; else noun=problems; fi
+if [ "$total" -eq 1 ]; then noun=problem; them=it; else noun=problems; them=them; fi
 {
   printf 'drupal-dev lint: %s %s in %s (%s)\n' "$total" "$noun" "$display" "$tools"
-  printf 'drupal-dev lint found %s %s in %s after this edit. Fix them unless the project deliberately ignores these rules.\n%s' \
-    "$total" "$noun" "$display" "$details"
+  printf 'drupal-dev lint found %s %s in %s after this edit. Fix %s unless the project deliberately ignores these rules.\n%s' \
+    "$total" "$noun" "$display" "$them" "$details"
 } | "$PHP" -r '
   $all = (string) stream_get_contents(STDIN);
   [$summary, $details] = explode("\n", $all, 2) + ["", ""];
