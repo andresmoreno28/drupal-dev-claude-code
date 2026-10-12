@@ -15,6 +15,9 @@ an API: if it still includes `^10`, use the backwards-compatible variants marked
   constructor property promotion, `final` classes unless extension is intended.
 - Classes get dependencies injected. `\Drupal::service()` is for procedural code only
   (`.module`, `.install`, hooks that must stay procedural).
+- Plugins and forms use `DependencySerializationTrait`, which cannot restore `private`
+  service properties after serialization (core issue #3110266; phpstan-drupal reports it).
+  Inject into `protected` properties there; `private` is fine in plain services and hooks.
 - Entity queries must call `->accessCheck(TRUE|FALSE)`; core throws a `QueryException`
   otherwise. Use `TRUE` for anything shown to a user; `FALSE` only for system work, with a comment.
 - Every render array that depends on data carries cache metadata (see the last section).
@@ -136,7 +139,7 @@ final class MyModuleHooks {
 final class ArticleCountBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   public function __construct(array $configuration, $plugin_id, $plugin_definition,
-    private readonly ArticleCounter $counter,
+    protected readonly ArticleCounter $counter,
   ) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
   }
