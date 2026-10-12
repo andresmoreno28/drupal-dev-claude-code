@@ -83,16 +83,18 @@ config, there is no "uninstall" and no update path, so commit the exported confi
 ```yaml
 # recipes/newsroom/recipe.yml
 name: 'Newsroom'
-description: 'Article tagging, an editor role and a feedback contact.'
+description: 'Article tagging, an editor role and the site notification address.'
 type: 'Site'
 recipes:
   - core/recipes/article_tags      # path from the Drupal root; bare names = sibling recipes
 install:
-  - pathauto
+  - path
+  - views
 config:
   strict: false                    # default true: existing config must match exactly
   import:
-    pathauto: '*'                  # all config/install + config/optional of that module
+    node:
+      - views.view.content         # or `node: '*'` for all of its config/install + optional
   actions:
     user.role.editor:
       createIfNotExists:
@@ -118,8 +120,9 @@ input:
 Apply:
 
 ```bash
+# The path is relative to the web root. Input names are <recipe folder>.<input>.
 drush recipe ../recipes/newsroom --input=newsroom.site_mail=web@example.com
-# without Drush, from the web root (11.4+ prefers vendor/bin/dr recipe ...)
+# Without Drush, from the web root (deprecated in 11.4 in favour of vendor/bin/dr recipe)
 php core/scripts/drupal recipe ../recipes/newsroom
 drush cr
 ```

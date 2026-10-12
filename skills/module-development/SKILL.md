@@ -79,9 +79,9 @@ final class ArticleCounter {
 Core aliases its main interfaces (`EntityTypeManagerInterface`, `ConfigFactoryInterface`,
 `AccountProxyInterface`, `Connection`, `TimeInterface`, ...) for autowiring. For a service
 without an alias, use `#[Autowire(service: 'service.id')]` on the parameter.
-`ControllerBase` autowires its constructor (Drupal 10.2+); so do plugins that implement
-`ContainerFactoryPluginInterface` (11.3+) and `FormBase` (11.4). **BC**: on older cores add the
-classic `create(ContainerInterface $container)` factory.
+`ControllerBase` autowires its constructor (Drupal 10.2+); so do plugins that extend core's
+`PluginBase` and implement `ContainerFactoryPluginInterface` (11.3+), and `FormBase` (11.4).
+**BC**: on older cores add the classic `create(ContainerInterface $container)` factory.
 
 ## Hooks: OOP with `#[Hook]` (Drupal 11.1+)
 
@@ -93,6 +93,7 @@ namespace Drupal\my_module\Hook;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Hook\Attribute\Hook;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
+use Drupal\my_module\ArticleNotifier;
 use Drupal\node\NodeInterface;
 
 final class MyModuleHooks {
@@ -244,7 +245,8 @@ Every render array, block, access result and cacheable response answers three qu
   enabled. Put per-user fragments behind a `#lazy_builder` so the rest of the page stays cached.
 - `max-age` does not reach the Internal Page Cache for anonymous users. Use tags and invalidate
   them (`Cache::invalidateTags(['my_module:stats'])`, or inject `CacheTagsInvalidatorInterface`),
-  or call `\Drupal::service('page_cache_kill_switch')->trigger()` for truly uncacheable pages.
+  or inject `Drupal\Core\PageCache\ResponsePolicy\KillSwitch` (`page_cache_kill_switch`) and
+  call `trigger()` for responses that must never be cached for anonymous users.
 - JSON controllers: return `CacheableJsonResponse` and add dependencies to it.
 - Twig that reaches into references (`node.field_tags.entity.label`) skips the referenced
   entity's cache tags; render `content.field_tags` or add the dependency in preprocess.

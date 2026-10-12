@@ -15,7 +15,7 @@ opting out.
 
 | Flag | Fix |
 |---|---|
-| `{{ value|raw }}`, `Markup::create($user_data)`, `new FormattableMarkup($user_data, [])` | Print the variable or a render array; keep `|raw` / `Markup` for markup the code generated itself |
+| `{{ value\|raw }}`, `Markup::create($user_data)`, `new FormattableMarkup($user_data, [])` | Print the variable or a render array; keep `\|raw` / `Markup` for markup the code generated itself |
 | `'#markup' => $untrusted` | `'#plain_text' => $untrusted` (escaped). `#markup` only runs `Xss::filterAdmin()`, meant for admin-entered HTML |
 | HTML built by string concatenation in PHP | Render arrays, `#type => 'html_tag'`, or a Twig template |
 | User text with formatting | `['#type' => 'processed_text', '#text' => $text, '#format' => $format_id]` |
