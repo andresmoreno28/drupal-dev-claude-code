@@ -1,6 +1,6 @@
 ---
 name: module-development
-description: Writes and refactors custom Drupal 10/11 module code the current way - services and dependency injection, object-oriented hooks with the Hook attribute, plugins declared with PHP attributes, event subscribers, routes and controllers, forms and ConfigFormBase, entity queries, and render cache metadata (tags, contexts, max-age). Use when creating or changing PHP in a Drupal module, adding a hook, block, service, route, form, queue worker or event subscriber, or when rendered output is stale, leaks between users or ignores permissions.
+description: Drupal 10/11 module code done the current way - services and autowiring, OOP hooks with the Hook attribute, plugins with PHP attributes, routes, controllers, forms, event subscribers, entity queries and render cache metadata. Use when writing or changing PHP in a Drupal module, or when output is stale, leaks between users or ignores permissions.
 ---
 
 # Drupal module development

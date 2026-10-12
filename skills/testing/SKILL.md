@@ -1,6 +1,6 @@
 ---
 name: testing
-description: Writes and runs automated tests for Drupal 10/11 modules and themes with PHPUnit - choosing between Unit, Kernel, Functional and FunctionalJavascript tests, kernel test setup (modules, entity schemas, config), PHPUnit attributes required by Drupal 12, and running tests locally or in DDEV (SIMPLETEST_DB, Selenium add-on). Use when adding or fixing tests, reproducing a bug in a test, setting up phpunit for a Drupal project, or when tests fail on deprecations, schema errors or missing attributes.
+description: Drupal PHPUnit testing - choosing Unit, Kernel, Functional or FunctionalJavascript tests, kernel test setup, the attributes Drupal 12 requires, and running tests locally or in DDEV. Use when writing, fixing or running Drupal tests, or setting up PHPUnit for a Drupal project.
 ---
 
 # Drupal testing

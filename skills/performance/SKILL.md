@@ -1,6 +1,6 @@
 ---
 name: performance
-description: Diagnoses and fixes Drupal 10/11 performance problems - the caching layers (CDN and reverse proxy, Internal Page Cache, Dynamic Page Cache, BigPipe, render cache, cache backends), lazy builders and placeholders, cache debugging headers, avoiding N+1 entity loads and heavy entity queries, batch and queue work, cron, and front-end assets. Use when a Drupal page or API is slow, the cache hit rate is low, pages are uncacheable for anonymous users, memory runs out in loops, or before shipping code that renders lists or per-user content.
+description: Drupal performance - page cache, dynamic page cache, BigPipe, render cache and placeholders, cache debugging headers, N+1 entity loads, queues, cron and assets. Use when a Drupal page or API is slow or uncacheable, memory runs out in loops, or before shipping code that renders lists or per-user content.
 ---
 
 # Drupal performance

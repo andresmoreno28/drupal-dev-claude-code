@@ -1,6 +1,6 @@
 ---
 name: drupal-reviewer
-description: Reviews a Drupal code change (working tree, a branch, a commit range or a merge request diff) for Drupal API correctness, security, cache metadata, performance, coding standards and tests, and reports findings ranked by severity with file:line. Use after implementing a Drupal feature or fix, before committing or opening a merge request, or whenever asked to review Drupal PHP, Twig, YAML or JavaScript changes.
+description: Reviews a Drupal change (working tree, branch, commits or a diff) for API correctness, security, cache metadata, performance, coding standards and tests, and reports findings by severity with file:line. Use after implementing a Drupal change, before committing or opening a merge request, or when asked for a Drupal code review.
 tools: Read, Grep, Glob, Bash
 model: inherit
 color: blue

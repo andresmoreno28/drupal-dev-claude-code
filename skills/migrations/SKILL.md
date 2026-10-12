@@ -1,6 +1,6 @@
 ---
 name: migrations
-description: Builds content imports with the Drupal Migrate API - migration YAML (source, process pipeline, destination), core process plugins (migration_lookup, sub_process, skip_on_empty, format_date, default_value), JSON/XML/CSV sources from Migrate Plus and contrib, dependencies and lookups between migrations, running and debugging with Drush (migrate:import, rollback, messages, reset-status) and testing migrations. Use when importing content from another system or an older Drupal site, writing or debugging a migration YAML or a custom source or process plugin, or re-running imports with updates.
+description: Drupal Migrate API - migration YAML with source, process and destination, core process plugins, Migrate Plus JSON and XML sources, Drush migrate commands, custom plugins and tests. Use when importing content into Drupal from another system or an older site, or writing or debugging a migration.
 ---
 
 # Drupal migrations

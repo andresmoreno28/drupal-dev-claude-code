@@ -1,6 +1,6 @@
 ---
 name: theming
-description: Builds and fixes Drupal 10/11 front ends - Single Directory Components (component.yml props and slots, Twig include/embed, render arrays), Twig templates and suggestions, preprocess (including OOP theme hooks), asset libraries and Drupal.behaviors with once(), generating a theme from the core Starterkit, and accessible markup. Use when creating or editing a Drupal theme, *.html.twig or *.component.yml files, *.libraries.yml, *.theme files, front-end JavaScript behaviors, or when markup, assets or Twig debug output are wrong.
+description: Drupal 10/11 theming - Starterkit themes, Twig templates and suggestions, preprocess, libraries and Drupal.behaviors with once(), Single Directory Components and accessible markup. Use when editing a Drupal theme, *.html.twig, *.component.yml, *.libraries.yml or *.theme files, or front-end JavaScript in Drupal.
 ---
 
 # Drupal theming

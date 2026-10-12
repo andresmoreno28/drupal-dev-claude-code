@@ -1,6 +1,6 @@
 ---
 name: headless
-description: Exposes Drupal 10/11 content to decoupled front ends and other systems - core JSON:API (resource URLs, include, sparse fieldsets, filters, sorting, pagination, revisions, writes), choosing between JSON:API, REST resources and custom JSON controllers, authentication (cookie plus CSRF token, OAuth via Simple OAuth), CORS, access and caching of API responses. Use when building or consuming a Drupal API, connecting a JavaScript or mobile front end, enabling JSON:API writes, or debugging missing, slow or leaking API data.
+description: Drupal as an API - core JSON:API queries, includes, sparse fieldsets, filters, pagination and writes, custom JSON endpoints, authentication, CORS and API caching. Use when connecting a decoupled or mobile front end, building or consuming a Drupal API, or debugging missing, slow or leaking API data.
 ---
 
 # Headless and APIs

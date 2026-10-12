@@ -1,6 +1,6 @@
 ---
 name: security
-description: Secure-coding rules and a review checklist for Drupal 10/11 code - XSS (render arrays, Twig autoescape, Xss::filter, Html::escape, t() placeholders), SQL injection (Database API placeholders), access control on routes, entities, fields and entity queries (accessCheck), CSRF route tokens, file upload validation, open redirects, unsafe deserialization, secrets, and the Drupal Security Team advisory process. Use when writing or reviewing code that handles user input, output, permissions, queries, uploads or redirects, when auditing a module, or when handling a possible Drupal vulnerability.
+description: Drupal secure coding and security review - XSS and escaping, SQL placeholders, access checks on routes, entities, fields and queries, CSRF tokens, file uploads, redirects, secrets and Security Team advisories. Use when code handles input, output, permissions, queries or uploads, when auditing a module, or when handling a vulnerability.
 ---
 
 # Drupal security

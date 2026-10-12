@@ -1,6 +1,6 @@
 ---
 name: config-management
-description: Handles Drupal configuration management and deployments - config sync (drush config:export/import), environment overrides in settings.php, Config Split and Config Ignore, module config/install vs config/optional, update hooks vs post_update vs hook_deploy_NAME, the drush deploy order, and Drupal recipes with config actions and inputs. Use when exporting or importing config, writing an update or deploy hook, preparing a release, setting up dev/stage/prod differences, creating or applying a recipe, or when a deployment reverts or loses configuration.
+description: Drupal configuration and deployments - config export and import, settings.php overrides, Config Split, Config Ignore, update, post-update and deploy hooks, drush deploy, and recipes with config actions. Use when exporting or importing config, writing an update or deploy hook, preparing a release, or creating or applying a recipe.
 ---
 
 # Drupal configuration management

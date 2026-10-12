@@ -1,6 +1,6 @@
 ---
 name: upgrades
-description: Plans and executes Drupal major and minor upgrades - Drupal 10 to 11 to 12 readiness, the October 2026 release timeline, PHP requirements, finding and fixing deprecated API use with Upgrade Status, drupal-rector and phpstan-drupal, core modules and themes removed in Drupal 12, contrib compatibility (core_version_requirement, Project Update Bot, the lenient Composer plugin) and the Composer commands for the core upgrade. Use when preparing or running a Drupal upgrade, fixing deprecation warnings, making a module compatible with the next major, or answering which Drupal or PHP version a site needs.
+description: Drupal 10 to 11 to 12 upgrades - release dates, PHP requirements, deprecations with Upgrade Status, drupal-rector and phpstan-drupal, extensions removed in Drupal 12, contrib compatibility and the Composer commands. Use when preparing an upgrade, fixing deprecations, or checking which Drupal or PHP version a site needs.
 ---
 
 # Drupal upgrades
